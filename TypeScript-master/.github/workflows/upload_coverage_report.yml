@@ -5,7 +5,7 @@ name: upload_coverage_report
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
         run: npm test -- --coverage
 
       - name: Upload coverage to codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
         with:
           files: "coverage/coverage-final.json"
           fail_ci_if_error: true
